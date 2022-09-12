@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import './styles/App.scss';
+import axios from 'axios';
+import ListCoins from './components/ListCoins';
+import Header from './components/Header';
+import ModalCoin from './components/ModalCoin';
+import { ModalContextProvider} from './context/ModalContext';
 
-function App() {
+const App = () => {
+  const [coins, setCoins] = useState([]);
+  const [search, setSearch] = useState('');
+
+  const getDataCoins = async () => {
+    const res = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=clp&order=market_cap_desc&per_page=100&page=1&sparkline=false');
+    setCoins(res.data);
+  };
+
+  useEffect(()=> {
+    getDataCoins();
+  },[]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+		<ModalContextProvider>
+			<div className="App">
+				<Header/>
+				<div className='search'>
+					<input type='text' onChange={e => setSearch(e.target.value)}  placeholder="Búsqueda de moneda"/>
+				</div>
+				<ListCoins coins={coins} search={search}/>
+				<ModalCoin/>
+			</div>
+		</ModalContextProvider>
   );
 }
 

@@ -1,0 +1,26 @@
+header{
+	background: linear-gradient(180deg, #FA790B 0%, #E79E0B 100%);
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	min-height: 260px;
+	h2{
+		font-style: normal;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 28px;
+		color: #FFFFFF;
+	}
+	.balance{
+		font-style: normal;
+		font-weight: 500;
+		font-size: 70px;
+		line-height: 82px;
+		color: #FFFFFF;
+	}
+}
