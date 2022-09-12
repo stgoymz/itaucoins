@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/itaucoins/static/css/main.c0cc62fa.css",
+    "main.js": "/itaucoins/static/js/main.040c84c9.js",
+    "static/js/787.308bb818.chunk.js": "/itaucoins/static/js/787.308bb818.chunk.js",
+    "index.html": "/itaucoins/index.html",
+    "main.c0cc62fa.css.map": "/itaucoins/static/css/main.c0cc62fa.css.map",
+    "main.040c84c9.js.map": "/itaucoins/static/js/main.040c84c9.js.map",
+    "787.308bb818.chunk.js.map": "/itaucoins/static/js/787.308bb818.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0cc62fa.css",
+    "static/js/main.040c84c9.js"
+  ]
+}
